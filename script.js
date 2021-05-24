@@ -36,8 +36,8 @@ function assicuta(){
     vDist=fungoTop-apeTop;
 
     //calcola
-    apeLeft=apeLeft+(hDist*.1)+Math.sign(hDist)*4;
-    apeTop=apeTop+(vDist*.1)+Math.sign(vDist)*4;
+    apeLeft=apeLeft+(hDist*.05)+Math.sign(hDist)*4;
+    apeTop=apeTop+(vDist*.05)+Math.sign(vDist)*4;
 
     //assegna
     ape.style.left=apeLeft+"px";
@@ -87,7 +87,7 @@ function ciclo(){
         } else {
             crescita();
         }
-    },40);
+    },30);
 }
 
 function bottoneFungo(){
