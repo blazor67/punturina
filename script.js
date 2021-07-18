@@ -60,15 +60,32 @@ function overlap(){
 
 //dopo la punturina
 function crescita(){
+    punt.pause();
+    punt.src="punturina.wav"
     punt.play();
 
     //il fungo cresce
+    //random boing oppure lento
+    
+    rando=Math.floor(Math.random() * 2);
+    if(rando>=1){ //boing
+        setTimeout(function(){
+            punt.src="boing.wav";
+            punt.play();
+            fungo.style.transition="0.2s ease-in";
+            fungo.classList.add("lungo");
+        },500);
+
+    }
+    else{ //lento
+        
     setTimeout(function(){
         punt.src="lungo.wav";
         punt.play();
         fungo.style.transition="2s ease-in";
         fungo.classList.add("lungo");
     },500);
+    }
 
     //ok ora puoi ricaricare
     setTimeout(function(){        
@@ -93,6 +110,7 @@ function ciclo(){
 function bottoneFungo(){
 
     bott.style.display="none";
+    punt.play();
     ciclo();
 }
 
